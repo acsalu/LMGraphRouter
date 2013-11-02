@@ -19,14 +19,14 @@ def fetchGraph():
 
     for node in nodes:
         v = g.vs[nodes.index(node)]
-        v['lat'] = node.lat
-        v['lng'] = node.lng
-        print("node (%.6f, %.6f)" % (node.lat, node.lng))
+        v['tag'] = 0
 
     for e in edges:
         v1 = g.vs[nodes.index(e.node1)]
         v2 = g.vs[nodes.index(e.node2)]
-
+        e['lat'] = node.lat
+        e['lng'] = node.lng
+              
 
 
     return g
