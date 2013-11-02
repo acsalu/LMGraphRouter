@@ -7,7 +7,7 @@ class Edge:
 # ranked = rankAnglesAccordingToDistanceFromRightAngle(angleArray)
 
 def main():
-    
+     a = 1
 	g_query = Graph()
 	g_map = Graph()
 	
