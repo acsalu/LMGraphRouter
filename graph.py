@@ -19,13 +19,15 @@ def fetchGraph():
 
     for node in nodes:
         v = g.vs[nodes.index(node)]
-        v['tag'] = 0
-
-    for e in edges:
-        v1 = g.vs[nodes.index(e.node1)]
-        v2 = g.vs[nodes.index(e.node2)]
-        e['lat'] = node.lat
-        e['lng'] = node.lng
+        v["flag"] = 0
+		v["nid"] = str(nodes.index(node))
+		
+    for i, edge in enumerate(edges):
+        v1 = g.vs[nodes.index(edge.node1)]
+        v2 = g.vs[nodes.index(edge.node2)]
+        g.add_edges(v1,v2)
+        g.es[i]["n"] = (v1["nid"]:edge.bearing1, v2["nid":edge.bearing2])
+        g.es[i]["length"] = edges.length
               
 
 
