@@ -102,25 +102,35 @@ def isCloseToThirdRightAngle(angle):
 
 def rankAnglesAccordingToDistanceFromRightAngle(angles):
     _angles = list(angles)
+    nodeIds = []   
+    print "nodeIds = "
+    print nodeIds 
+
+    #generate a list to map index
+    for x in range(len(angles)):
+        nodeIds.append(x)
+
+    print "nodeIds = "
+    print nodeIds
+
     #print _angles
     index = 0
     for i in range(len(_angles) ):
-	
 	a = _angles[index]
 	if isCloseToRightAngle(a) or isCloseToTwiceRightAngle(a) or isCloseToThirdRightAngle(a):
 	    #print "so close, leave it there and move the index"
 	    #index = index + 1
 	    _angles.append( _angles[index] )
 	    del _angles[index]
+	    nodeIds.append( nodeIds[index] )
+	    del nodeIds[index]
 	else:
 	    #_angles.append( _angles[index] )
 	    #del _angles[index]
 	    index = index + 1
     #print _angles
-    return _angles
 
-
-
+    return zip(nodeIds, _angles)
 
 angleArray = getAngleArrayWithEdgeArray(edges)
 print angleArray
