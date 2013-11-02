@@ -1,1 +1,2 @@
-print "hi, cookingfish"
+from igraph import *
+
